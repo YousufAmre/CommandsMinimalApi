@@ -9,7 +9,8 @@ namespace SixMinApi.Data
         {
 
         }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+                    => optionsBuilder.LogTo(Console.WriteLine);
         public DbSet<Command> Commands => Set<Command>();
     }
 }
